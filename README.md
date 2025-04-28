@@ -6,7 +6,7 @@ This project is a simple Python script that reads sales data from a CSV file, cl
 
 ## Built With
 
-[![Python](https://skillicons.dev/icons?i=py)](https://skillicons.dev)
+[![Python](https://skillicons.dev/icons?i=py)]
 
 ## Overall Approach
 
