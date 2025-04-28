@@ -24,7 +24,7 @@ To use this script, follow these steps:
 
 1. Clone the repository to your local machine.
 2. Locally navigate to the src directory within the main project folder.
-3. Run the process_data.py script to generate the aggregated report.
+3. Run the process_data.py script (make sure you are in the src directory) to generate the aggregated report.
     ```
     python3 scripts/process_data.py
     ```
