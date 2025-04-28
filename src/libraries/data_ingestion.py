@@ -2,13 +2,12 @@ import csv
 import json
 from datetime import datetime
 
-def read_sales_data(sales_filepath):
-
+def read_sales_data(filepath):
     # Initialize an empty list to store the sales data
     sales_data = []
 
     # Read the sales data from the CSV file
-    with open(sales_filepath, mode='r', newline='') as file:
+    with open(filepath, mode='r', newline='') as file:
         reader = csv.DictReader(file)
         for row in reader:
             # Retrieve the date from the current row
@@ -32,15 +31,12 @@ def read_sales_data(sales_filepath):
     # print(sales_data)
     return sales_data
 
-def read_product_data(product_filepath):
+def read_product_data(filepath):
     # Read the product data from the JSON file
-    with open(product_filepath) as file:
+    with open(filepath) as file:
         # Load the JSON data into a Python dictionary
         product_data = json.load(file)
-    
+
     # Create a dictionary indexed by product_id for easy lookup
     # print({product['product_id']: product for product in product_data})
     return {product['product_id']: product for product in product_data}
-
-# read_sales_data('../data/sales_data.csv')
-# read_product_data('../data/product_data.json')
