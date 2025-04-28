@@ -41,11 +41,13 @@ def write_aggregated_report_to_csv(report, filepath):
         # Iterate over the sorted categories and write the report data to the CSV file
         for category in sorted_categories:
             r = report[category]
-            writer.writerow([category,
-                            f"{r['total_sales']:.2f}",
-                            r['total_transactions'],
-                            f"{r['average_transaction_value']:.2f}",
-                            r['total_quantity']])
+            writer.writerow([
+                category,
+                f"{r['total_sales']:.2f}",
+                r['total_transactions'],
+                f"{r['average_transaction_value']:.2f}",
+                r['total_quantity']
+            ])
 
 if __name__ == '__main__':
     sales_file = '../data/sales_data.csv'

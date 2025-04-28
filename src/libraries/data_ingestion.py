@@ -18,7 +18,11 @@ def read_sales_data(filepath):
                 parsed_date = datetime.strptime(date, '%Y-%m-%d')
             # If that fails, try to parse it as a date in MM/DD/YYYY format
             except ValueError:
-                parsed_date = datetime.strptime(date, '%m/%d/%Y')
+                try:
+                    parsed_date = datetime.strptime(date, '%m/%d/%Y')
+                # If that fails, skip the row (added for testing purposes)
+                except ValueError:
+                    continue
             
             # Convert the date back into a string in YYYY-MM-DD format when storing the data back in the row
             row['date'] = parsed_date.strftime('%Y-%m-%d')
