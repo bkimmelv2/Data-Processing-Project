@@ -29,7 +29,7 @@ def read_sales_data(sales_filepath):
             row['sale_amount'] = float(row['sale_amount'])
             
             sales_data.append(row)
-    print(sales_data)
+    # print(sales_data)
     return sales_data
 
 def read_product_data(product_filepath):
@@ -37,8 +37,9 @@ def read_product_data(product_filepath):
     with open(product_filepath) as file:
         # Load the JSON data into a Python dictionary
         product_data = json.load(file)
+    
     # Create a dictionary indexed by product_id for easy lookup
-    print({product['product_id']: product for product in product_data})
+    # print({product['product_id']: product for product in product_data})
     return {product['product_id']: product for product in product_data}
 
 # read_sales_data('../data/sales_data.csv')
